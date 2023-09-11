@@ -1,0 +1,39 @@
+{
+  "userToken": [
+    {
+      "token": "fdcf8584167f81d119bfd04a025472df",
+      "username": "dawa",
+      "password": "123456"
+    },
+    {
+      "token": "fdcf8584167f81d119bfd04a025472df",
+      "username": "erwa",
+      "password": "000000"
+    },
+    {
+      "token": "fdcf8584167f81d119bfd04a025472df",
+      "username": "sanwa",
+      "password": "111111"
+    }
+  ],
+  "userInfo": [
+    {
+      "userCN": "大娃",
+      "role": "管理员",
+      "portrait": "/user-portrait/dawa.jpg",
+      "username": "dawa"
+    },
+    {
+      "userCN": "二娃",
+      "role": "会员",
+      "portrait": "/user-portrait/erwa.jpg",
+      "username": "erwa"
+    },
+    {
+      "userCN": "三娃",
+      "role": "测试",
+      "portrait": "/user-portrait/sanwa.jpg",
+      "username": "sanwa"
+    }
+  ]
+}
