@@ -90,22 +90,22 @@ const load = () => {
   const iVal = new Date(axis[6].split('/').join('-')).getTime();
   let temp = itemVal;
   // console.log('axis[0]', axis[0]);
-  console.log('new Date(axis[0])', new Date(axis[0]));
+  // console.log('new Date(axis[0])', new Date(axis[0]));
   while (temp <= iVal) {
     let todoNum = 0;
     let finishedNum = 0;
     todoStore.finishTodo.forEach(item => {
       const val = new Date(item.date).getTime();
-      console.log('val', val);
+      // console.log('val', val);
       if (val == temp) {
-        console.log('aaaaaaaaaaaaaaaa');
+        // console.log('aaaaaaaaaaaaaaaa');
         finishedNum += item.child.length;
       }
     });
     todoStore.todo.forEach(item => {
       const val = new Date(item.date).getTime();
       if (val == temp) {
-        console.log('aaaaaaaaaaaaaaaa');
+        // console.log('aaaaaaaaaaaaaaaa');
         todoNum += item.child.length;
       }
     });

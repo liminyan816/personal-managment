@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="timeline_container">
-      <myInfoTimeline></myInfoTimeline>
+      <myInfoTimeline :repolist="githubList"></myInfoTimeline>
       <myInfoTimeline :repolist="giteeList"></myInfoTimeline>
     </div>
   </div>
@@ -37,7 +37,7 @@ import myInfoTimeline from './my-info-timeline.vue';
 import { useUserStore } from '../../store/user';
 import { useRouter } from 'vue-router';
 import { useRepositoryStore } from '../../store/repository';
-import { getGiteeCommitAPI } from '../../api/info';
+import { getGiteeCommitAPI, getGithubCommitAPI } from '../../api/info';
 // api.home.reqGetGitee(repository().gitee.address);
 const router = useRouter();
 const props = defineProps(['showAddress']); //是否展示地址
@@ -56,11 +56,16 @@ const repoData = [
     repo: 'vue3-management-template-master',
     access_token: '5426f78f81b184dda8416f2537bfba51',
   },
-  {},
+  {
+    owner: 'liminyan816',
+    repo: 'personal-managment',
+  },
 ];
 
 // gitee提交记录
 const giteeList = ref<any[]>([]);
+// github提交记录
+const githubList = ref<any[]>([]);
 
 // 获取gitee所有提交记录
 const getGiteeCommitData = async () => {
@@ -73,8 +78,16 @@ const getGiteeCommitData = async () => {
   giteeList.value = res;
 };
 
+// 获取gitee所有提交记录
+const getGithubCommitData = async () => {
+  const res = await getGithubCommitAPI(repoData[1].owner!, repoData[1].repo!);
+  // console.log('git-res', res);
+  githubList.value = res;
+};
+
 onMounted(() => {
   getGiteeCommitData();
+  getGithubCommitData();
 });
 </script>
 
